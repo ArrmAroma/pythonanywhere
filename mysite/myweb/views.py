@@ -12,10 +12,21 @@ from django.contrib.auth.decorators import login_required
 def home(req):
     return render(req, 'myweb/base.html')
 
+def Contact(req):
+    return render(req, 'myweb/contact.html') 
+
+def PageAdmin(req):
+    return render(req, 'myweb/pageAdmin.html')  
+
+def show(req):
+    show = MyPicture.objects.all()
+
+    return render(req, 'myweb/show.html',{"show":show})
+
 def Login(request):
 
-    if request.user.is_authenticated:
-        return redirect('')
+    if request.user .is_authenticated:
+        return redirect('pageAdmin')
     else:
         if request.method == 'POST' :
             try:
@@ -26,7 +37,7 @@ def Login(request):
 
                 if user is not None:
                     login(request, user)
-                    return redirect('')
+                    return redirect('pageAdmin')
 
                 else:
                     messages.info(request, 'Username or Password is incorrect')
@@ -39,6 +50,6 @@ def Login(request):
 
 def Logout(req):
     user_logout(req)
-    return redirect('')
+    return redirect('home')
 #@Login_required(login_url='login')
 
