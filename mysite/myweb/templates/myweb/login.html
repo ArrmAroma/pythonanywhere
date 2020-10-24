@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Green Space</title>
+        <link rel="icon" type="image/x-icon" href="https://startbootstrap.github.io/startbootstrap-grayscale/assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://startbootstrap.github.io/startbootstrap-grayscale/css/styles.css" rel="stylesheet" />
+    </head>
+    <body  id="page-top">
+    <form class="login100-form validate-form flex-sb flex-w" method="POST" action="">
+
+	        {% csrf_token %}
+
+	        <span class="login100-form-title p-b-51">
+                    Login
+	        </span>
+
+
+	        <div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+		            <input class="input100" type="text" name="username" placeholder="Username">
+		            <span class="focus-input100"></span>
+	        </div>
+
+
+	        <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+		            <input class="input100" type="password" name="password" placeholder="Password">
+		            <span class="focus-input100"></span>
+	        </div>
+
+	        <div class="flex-sb-m w-full p-t-3 p-b-24">
+		            <div class="contact100-form-checkbox">
+			                <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+			                <label class="label-checkbox100" for="ckb1">
+				                    Remember me
+			                </label>
+		            </div>
+
+	        </div>
+
+	        <div class="container-login100-form-btn m-t-17">
+		            <button class="login100-form-btn">
+			                Login
+		            </button>
+	        </div>
+
+    {% for message in messages %}
+
+    <p id="messages"> {{ messages.message }} </p>
+
+
+
+    {% endfor %}
+
+
+
+
+    </form>
+    </body>
+</html>
