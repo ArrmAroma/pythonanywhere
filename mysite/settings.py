@@ -25,7 +25,7 @@ SECRET_KEY = '7gch=lsoyu2wzsbva8*+dbo4x92h)k*cgwkla&_(*+m5m3n-qs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ArmAroma.pythonanywhere.com',u'127.0.0.1']
+ALLOWED_HOSTS = [u'ArmAroma.pythonanywhere.com',u'127.0.0.1']
 
 
 # Application definition

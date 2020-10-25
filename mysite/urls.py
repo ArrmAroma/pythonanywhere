@@ -8,6 +8,7 @@ from django.conf import settings
 urlpatterns = [
     path('show/', views.show),
     path('contact/', views.Contact),
+    path('upload', views.Upload),
     path('myweb/',include('myweb.urls')),
     path('login/', views.Login),
     path('logout/', views.Logout),

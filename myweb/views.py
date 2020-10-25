@@ -13,10 +13,10 @@ def home(req):
     return render(req, 'myweb/base.html')
 
 def Contact(req):
-    return render(req, 'myweb/contact.html') 
+    return render(req, 'myweb/contact.html')
 
 def PageAdmin(req):
-    return render(req, 'myweb/pageAdmin.html')  
+    return render(req, 'myweb/pageAdmin.html')
 
 def show(req):
     show = MyPicture.objects.all()
@@ -52,4 +52,21 @@ def Logout(req):
     user_logout(req)
     return redirect('home')
 #@Login_required(login_url='login')
+
+#def Picture(req):
+    #show = inputPicture.objects.all()
+    #return render(req, 'myweb/show.html', {'Picture': show})
+
+#def Upload(request):
+    #if request.method == 'POST':
+        #form = inputPicture(request.POST)
+
+        #if form.is_valid():
+            #a = form.save()
+            #a.save()
+            #return redirect("/Picture")
+    #else:
+        #form = inputPicture()
+        #context = {'form': form}
+        #return render(request, 'myweb/upload.html', context)
 

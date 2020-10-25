@@ -17,34 +17,37 @@
 		
 	</head>
 <style>
-*{
+body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-}
-.hero{
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
-    background-position: center;
+    background: url(https://inwfile.com/s-fi/x087t4.jpg) no-repeat;
     background-size: cover;
+}
+.login-box{
+    width: 300px;
+    height: 350px;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: 008B8B;
+    text-align: center;
+    background: linear-gradient(to right,#dcdcdc,#dedede);
 }
-.form-box{
-    width: 380px;
-    height: 480px;
-    position: center;
-    margin: 6% auto;
-    background: #fff;
-    padding: 5px; 
-
+.login-box h1{
+    font-size: 30px;
+    border-bottom: 3px solid #4caf50;
+    width: 50% 0;
+    text-align: center;
 }
-.button-box{
-    width: 220px;
-    margin: 35px auto;
-    position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
-    border-radius: 30px;
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid #4caf50;
 }
 .toggle-btn{
     padding: 10px 30px;
@@ -54,14 +57,10 @@
     outline: none;
     position: relative;
 }
-#btn{
-    top: 0;
-    left: 0;
-    position: 110px;
-    height: 100%;
-    background: linear-gradient(to right,#ff105f,#ffad06);
-    border-radius: 30px;
-    transition: .5s;
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
 }
 .input-group{
     top: 180px;
@@ -81,7 +80,8 @@
 	background: transparent;
 }
 .submit-btn{
-    width: 85%;
+    width: 280px;
+    left:50%;
     padding: pointer;
     cursor: block;
     display: block;
@@ -102,18 +102,20 @@ span{
 }
 </style>  
 	
-<body  id="page-top" >
-    <form class="login100-form validate-form flex-sb flex-w" method="POST" action="">
-		<a>Log In</a>
+<body >
+    <form class="login-box" method="POST" action="">
+		<h1>Log In</h1>
 	        {% csrf_token %}
 
-	        <div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-		            <input class="input100" type="text" name="username" placeholder="Username">
+	        <div class="text-box" data-validate = "Name required">
+	                <i class="fa fa-user" aria-hidden="true"></i>
+		            <input class="input100" type="text" name="username" placeholder="Admin Name">
 		            <span class="focus-input100"></span>
 	        </div>
 
 
-	        <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+	        <div class="text-box" data-validate = "Password is required">
+	                <i class="fa fa-lock" aria-hidden="true"></i>
 		            <input class="input100" type="password" name="password" placeholder="Password">
 		            <span class="focus-input100"></span>
 	        </div>
@@ -146,4 +148,3 @@ span{
     </form>
 </body>
 </html>
-	

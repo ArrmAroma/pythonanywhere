@@ -23,4 +23,10 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
-        return f'{self.question.question_text} - {self.choice_text} - {self.votes}'        
+        return f'{self.question.question_text} - {self.choice_text} - {self.votes}'
+
+#class inputPicture(models.Model):
+    #img = models.CharField(max_length=255)
+    #Description = models.CharField(max_length=1000)
+    #def __str__(self):
+        #return f'{self.img} - {self.Description}'

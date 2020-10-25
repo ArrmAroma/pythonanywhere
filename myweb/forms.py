@@ -13,3 +13,8 @@ class CreateUserForm(UserCreationForm):
                 'password1',
                 'password2'
         ]
+
+#class inputPicture(ModelForm):
+    #class Meta:
+        #model = inputPicture
+        #fields = ['img','Description']
